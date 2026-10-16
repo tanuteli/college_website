@@ -1,5 +1,5 @@
 
-
+/* ========== RESET ========== */
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +10,22 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f5f7fa;
     color: #222;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #2563eb;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== NAVBAR ========== */
+header {
+    background-color: #1f2937;
 }
 
 .navbar {
@@ -17,77 +33,150 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background-color: #1f2937;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo {
     color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #60a5fa;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
     color: white;
-    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+.nav-links a:hover,
+.nav-links a.active {
+    color: #60a5fa;
 }
 
+/* ========== HERO SECTION ========== */
 .hero {
     min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px;
-    background-color: #dbeafe;
+    padding: 60px 8%;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 800px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #bfdbfe;
+    color: #1e40af;
+    padding: 8px 16px;
+    border-radius: 25px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: 45px;
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 1.2;
     margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #2563eb;
 }
 
 .hero p {
     font-size: 18px;
+    color: #4b5563;
     margin-bottom: 25px;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ========== BUTTONS ========== */
 .btn,
 button {
     display: inline-block;
-    padding: 12px 22px;
-    border: none;
+    padding: 12px 24px;
+    border: 2px solid #2563eb;
     border-radius: 6px;
     background-color: #2563eb;
     color: white;
-    text-decoration: none;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
+.btn:hover,
+button:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: white;
+    color: #2563eb;
+}
+
+.secondary-btn:hover {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+}
+
+/* ========== COMMON SECTIONS ========== */
 .section {
     padding: 70px 8%;
     text-align: center;
 }
 
-.section h1 {
-    font-size: 35px;
-    margin-bottom: 20px;
+.section-title {
+    max-width: 750px;
+    margin: 0 auto 35px;
 }
 
+.section-title span {
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section h1,
+.section h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: #6b7280;
+    margin-top: 10px;
+}
+
+/* ========== CARDS ========== */
 .cards {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 25px;
     flex-wrap: wrap;
     margin-top: 35px;
@@ -95,20 +184,247 @@ button {
 
 .card {
     width: 280px;
+    max-width: 100%;
     padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin: 12px 0;
+    color: #1f2937;
+}
+
+.card p {
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+.card a {
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* ========== ABOUT / CONTENT ========== */
+.content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 8%;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.content p {
+    margin-bottom: 15px;
+    color: #4b5563;
+}
+
+.content ul,
+.content ol {
+    margin: 15px 0 15px 25px;
+}
+
+/* ========== EVENTS ========== */
+.event-list {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 30px 8%;
+}
+
+.event-card {
+    width: 300px;
+    max-width: 100%;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h3 {
+    margin-bottom: 12px;
+}
+
+.event-card p {
+    margin-bottom: 10px;
+    color: #4b5563;
+}
+
+/* ========== CONTACT / FORMS ========== */
+.contact-card {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    line-height: 2;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.contact-card {
-    margin: 30px auto;
-    line-height: 2;
+form {
+    max-width: 600px;
+    margin: 25px auto;
+    text-align: left;
 }
 
-footer {
+form label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+/* ========== CALL TO ACTION ========== */
+.cta {
     text-align: center;
-    padding: 20px;
+    padding: 60px 8%;
+    background-color: #1e40af;
+    color: white;
+}
+
+.cta h2 {
+    font-size: clamp(26px, 4vw, 36px);
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    background-color: white;
+    color: #1e40af;
+    border-color: white;
+}
+
+.cta-btn:hover {
+    background-color: #dbeafe;
+    border-color: #dbeafe;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    padding: 35px 8% 15px;
     background-color: #1f2937;
     color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 25px;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    color: #d1d5db;
+    max-width: 400px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-links a {
+    color: white;
+}
+
+.footer-links a:hover {
+    color: #60a5fa;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #374151;
+    padding-top: 15px;
+    color: #d1d5db;
+    font-size: 14px;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 60vh;
+        padding: 45px 5%;
+    }
+
+    .section {
+        padding: 45px 5%;
+    }
+
+    .cards {
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
 }
